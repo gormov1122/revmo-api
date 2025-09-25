@@ -38,6 +38,17 @@ function generateRandomReview(id: number) {
 }
 // --- Конец генератора ---
 
+// --- CORS ---
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+export async function OPTIONS() {
+  return new Response(null, { headers: corsHeaders });
+}
+
 const dataDir = path.join(process.cwd(), 'src', 'data');
 
 async function getMockData(mockName: string) {
@@ -70,7 +81,7 @@ export async function GET(
   if (mockName === 'slider') {
     const sliderConfig = await getMockData('slider');
     if (!sliderConfig || sliderConfig.error) {
-      return NextResponse.json({ error: 'Slider config not found' }, { status: 404 });
+      return NextResponse.json({ error: 'Slider config not found' }, { status: 404, headers: corsHeaders });
     }
 
     const generatedData = {
@@ -78,17 +89,17 @@ export async function GET(
       data: Array.from({ length: sliderConfig.count }, (_, i) => generateRandomReview(i + 1)),
     };
     
-    return NextResponse.json(generatedData);
+    return NextResponse.json(generatedData, { headers: corsHeaders });
   }
 
   // Стандартная логика для остальных моков
   const data = await getMockData(mockName);
 
   if (!data) {
-    return NextResponse.json({ error: 'Mock data not found' }, { status: 404 });
+    return NextResponse.json({ error: 'Mock data not found' }, { status: 404, headers: corsHeaders });
   }
 
-  return NextResponse.json(data);
+  return NextResponse.json(data, { headers: corsHeaders });
 }
 
 export async function POST(
@@ -101,5 +112,5 @@ export async function POST(
 
   await saveMockData(mockName, newData);
 
-  return NextResponse.json({ success: true, data: newData });
+  return NextResponse.json({ success: true, data: newData }, { headers: corsHeaders });
 }
