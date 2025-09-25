@@ -51,6 +51,12 @@ export default async function HomePage() {
           панели администратора
         </Link>.
       </p>
+      <p style={{ marginTop: '1rem', fontSize: '1.1rem', backgroundColor: '#f0f0f0', padding: '1rem', borderRadius: '8px' }}>
+        Базовый URL для всех эндпоинтов: {' '}
+        <a href="https://revmo-api.netlify.app" target="_blank" rel="noopener noreferrer" style={{ color: '#0070f3', fontWeight: 'bold' }}>
+          https://revmo-api.netlify.app
+        </a>
+      </p>
 
       {endpoints.map(({ name, data, description }) => (
         <section key={name} style={{ marginBottom: '2rem', border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', backgroundColor: '#fafafa' }}>

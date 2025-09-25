@@ -1,7 +1,7 @@
 {
   "title": "Ваш помощник",
   "subtitle": "в борьбе с ревматическими заболеваниями",
-  "videoUrl": "https://example.com/main-video.mp4",
+  "videoUrl": "https://bcdless-s3-api.biocad.ru/shared/revmo/landing/video/Block-1-hero/1080p/Block-1-hero_1080p.webm",
   "buttons": {
     "ios": {
       "enabled": true,
@@ -24,12 +24,12 @@
     "watch_video": {
       "enabled": true,
       "label": "смотреть видео о приложении",
-      "url": "https://example.com/sidebar-video.mp4"
+      "url": "https://bcdless-s3-api.biocad.ru/shared/revmo/landing/video/Block-6-RevmoInfo/1080p/Block-6-RevmoInfo_1080p.webm"
     },
     "qr_code": {
       "enabled": true,
       "label": "Скачать по QR коду",
-      "url": "https://example.com/qr-code.png"
+      "url": "https://revmo-api.netlify.app/qr.svg"
     }
   },
   "socials": {
