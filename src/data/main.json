@@ -1,0 +1,53 @@
+{
+  "title": "Ваш помощник",
+  "subtitle": "в борьбе с ревматическими заболеваниями",
+  "videoUrl": "https://example.com/main-video.mp4",
+  "buttons": {
+    "ios": {
+      "enabled": true,
+      "label": "Скачать для iOS"
+    },
+    "android": {
+      "enabled": true,
+      "label": "Скачать для Android"
+    },
+    "apk": {
+      "enabled": true,
+      "label": "Скачать APK"
+    }
+  },
+  "sidebar": {
+    "download_app": {
+      "enabled": true,
+      "label": "Download app"
+    },
+    "watch_video": {
+      "enabled": true,
+      "label": "смотреть видео о приложении",
+      "url": "https://example.com/sidebar-video.mp4"
+    },
+    "qr_code": {
+      "enabled": true,
+      "label": "Скачать по QR коду",
+      "url": "https://example.com/qr-code.png"
+    }
+  },
+  "socials": {
+    "vk": {
+      "enabled": true,
+      "url": "https://vk.com/example"
+    },
+    "telegram": {
+      "enabled": true,
+      "url": "https://t.me/example"
+    },
+    "dzen": {
+      "enabled": true,
+      "url": "https://dzen.ru/example"
+    },
+    "vkVideo": {
+      "enabled": true,
+      "url": "https://vk.com/video/example"
+    }
+  }
+}
